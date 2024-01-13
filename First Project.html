@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adopt me</title>
+    <style>
+      body {
+        background: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/077/190/original/IMG_3-PhotoRoom.png-PhotoRoom.png?1681552520)
+            100%,
+          linear-gradient(#f1e5dd, #c8bfe9);
+      }
+      h1 {
+        margin: 0 auto 40px;
+      }
+      h2 {
+        margin: 20px 20px 0px;
+      }
+      .petCard {
+        border: 1px solid #4a7570;
+        border-radius: 20px;
+      }
+      img {
+        width: 100%;
+      }
+      .mainPage {
+        text-align: center;
+        box-shadow: rgba(73, 116, 111, 0.07) 0px 10px 10px 10px;
+        border-radius: 30px;
+        border: 1px solid #4a7570;
+        background-color: #f1e5dd;
+        color: #4a7570;
+        width: 50%;
+        margin: 0 auto;
+        padding: 40px 50px;
+        font-family: Helvetica;
+      }
+      p {
+        font-size: 18px;
+      }
+      .text {
+        text-align: justify;
+      }
+
+      a {
+        text-decoration: none;
+        color: #e1b660;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+      hr {
+        border: 1px solid #4a7570;
+        border-radius: 1px;
+      }
+      span {
+        font-size: 20px;
+        font-family: sans-serif;
+      }
+
+      button {
+        border-radius: 25px;
+        margin: 0 auto;
+        display: block;
+        background-color: #4a7570;
+        border: 1px solid #4a7570;
+        color: #f1e5dd;
+        font-size: 16px;
+        font-weight: 535;
+        line-height: 25px;
+        padding: 10px 40px;
+        text-decoration: none;
+        transition: all 200ms ease-in-out;
+        cursor: pointer;
+      }
+      button:hover {
+        color: #4a7570;
+        background: #f1e5dd;
+      }
+      .coder {
+        color: #f1e5dd;
+        padding-top: 30px;
+        text-align: center;
+        font-size: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mainPage">
+      <h1>
+        <strong>WANNA BE FRIENDS?</strong>
+      </h1>
+      <div class="petCard">
+        <h2>Hi, human! I'm Apollo.</h2>
+
+        <img
+          id="theImage"
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/077/051/original/pexels-photo-825949-PhotoRoom.png-PhotoRoom.png?1681491091"
+          alt="Dog Apollo"
+        />
+      </div>
+      <div class="text">
+        <p>
+          Did you know that over 1,000 people per hour run a search right now
+          looking to adopt a pet?
+        </p>
+        <p>
+          Pet adoption is quickly becoming the preferred way to find a new dog
+          or cat, and rightly so, there are many benefits to adopting a pet. Pet
+          adoption fees are usually much lower than buying from a breeder.
+        </p>
+        <p>
+          You're also likely to find a pet who's already learned a few things.
+          Adoptable pets are often already housetrained, good with kids, and do
+          well with other pets. And don't forget the wonderful feeling you get
+          from saving a life!
+        </p>
+
+        <a href="https://domivka-tvaryn.com/en/">
+          <em> Learn more </em>
+        </a>
+      </div>
+      <hr />
+      <p><span>Adopt your new best friend today!</span></p>
+      <button>ADOPT ♡</button>
+    </div>
+    <p class="coder">Coded by Alina Klimberh</p>
+
+    <script>
+      let contactButton = document.querySelector("button");
+      contactButton.addEventListener("click", adopt);
+      let h2 = document.querySelector("h2");
+
+      function pictureChange() {
+        document.getElementById("theImage").src =
+          "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/077/084/original/IMG_1941-PhotoRoom.png-PhotoRoom.png?1681503649";
+      }
+      function adopt() {
+        let name = prompt("What is your name?");
+        let email = prompt("What is your email?");
+        let pet = prompt("Do you want to adopt a cat or a dog?");
+        pet = pet.toLowerCase().trim();
+        if (pet === "dog") {
+          h2.innerHTML = `Hi, ${name}! I'm happy to see you!`;
+          alert(
+            `Thank you, ${name}! Your new dog 🐕 is already waiting for you!`
+          );
+        } else if (pet === "cat") {
+          pictureChange();
+          alert(
+            `Thank you, ${name}! Your new cat 🐈 is already waiting for you!`
+          );
+          h2.innerHTML = `Hi, ${name}! I'm Melly, happy to see you!`;
+        } else {
+          alert(`All ${pet} have already been adopted 🤩`);
+        }
+      }
+    </script>
+  </body>
+</html>
